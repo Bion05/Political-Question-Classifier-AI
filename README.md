@@ -1,24 +1,27 @@
 # Ταξινόμηση Σαφήνειας Πολιτικών Απαντήσεων
 
-Υλοποίηση και σύγκριση κατηγοριοποιητών κειμένου για την ανίχνευση αποφυγής 
-απαντήσεων σε πολιτικές συνεντεύξεις, στο πλαίσιο του SemEval 2026 Task 6 (CLARITY).
-Το μοντέλο ταξινομεί κάθε απάντηση πολιτικού σε τρεις κατηγορίες: 
+Υλοποίηση και σύγκριση NLP classifiers για την ανίχνευση αποφυγής 
+απαντήσεων σε πολιτικές συνεντεύξεις, στο πλαίσιο του διεθνούς 
+διαγωνισμού SemEval 2026 Task 6 (CLARITY).
+Κάθε απάντηση πολιτικού κατηγοριοποιείται σε τρεις κλάσεις:
 Clear Reply, Ambivalent και Clear Non-Reply.
 
 ## Μοντέλα
-- TF-IDF + Logistic Regression με L1 regularization και bigram features
-- Word2Vec + Logistic Regression με Skip-gram και averaged word vectors
+- TF-IDF + Logistic Regression (L1 regularization, bigram features)
+- Word2Vec + Logistic Regression (Skip-gram, averaged word vectors)
 
 ## Πειράματα
-11 πειραματικές εκτελέσεις με συστηματική βελτιστοποίηση υπερπαραμέτρων:
-- Εξερεύνηση class weighting, ngram ranges, vocabulary restriction
+11 πειραματικές εκτελέσεις με συστηματική βελτιστοποίηση:
+- Class weighting, ngram ranges, vocabulary restrictions
 - GridSearchCV με 5-fold cross-validation για C και solver
-- Ανίχνευση και διερεύνηση overfitting μέσω learning curves
-- Σύγκριση CBOW vs Skip-gram για Word2Vec
+- Σύγκριση CBOW vs Skip-gram και πολλαπλών vector sizes
+- Ανίχνευση overfitting μέσω learning curves
 
 ## Αποτελέσματα
-- TF-IDF (Run 11): Validation F1 = 0.510
-- Word2Vec (Run 9): Cross-validated F1 = 0.506
+| Μοντέλο | F1 (macro) |
+|---------|-----------|
+| TF-IDF (Run 11) | 0.510 |
+| Word2Vec (Run 9) | 0.506 |
 
 ## Τεχνολογίες
 Python · scikit-learn · gensim · Kaggle · LaTeX
