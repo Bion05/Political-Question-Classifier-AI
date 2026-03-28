@@ -23,6 +23,8 @@ Clear Reply, Ambivalent και Clear Non-Reply.
 | TF-IDF (Run 11) | 0.510 |
 | Word2Vec (Run 9) | 0.506 |
 
+Βαθμολογία Kaggle leaderboard: **0.58** (TF-IDF macro F1 στο κρυφό test set)
+
 ## Τεχνολογίες
 Python · scikit-learn · gensim · Kaggle · LaTeX
 
